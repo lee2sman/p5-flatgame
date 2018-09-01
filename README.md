@@ -2,7 +2,7 @@
 
 **Note: I am currently editing to make this more advanced so assets can be dropped in easier. Consider this the pre-alpha!**
 
-This is a template to create a [Flatgame](https://flatgame.itch.io/) using the P5JS and P5Play javascript libraries under the hood.
+This is a template to create a [Flatgame](https://flatgame.itch.io/) using the P5JS and P5Play javascript libraries under the hood. Also includes P5Sound to play the soundtrack, and hammer.js for swipe gesture on mobile.
 
 ## Glossary
 
@@ -21,6 +21,14 @@ A [flatgame](https://flatgame.itch.io/) is an inclusive democratic form of game-
 ### P5Play
 
 [P5Play](https://molleindustria.github.io/p5.play/) is a Javascript library initiated by artist, game-maker [Paolo Pedercini](http://molleindustria.org/). It works with P5JS and is a Javascript library for the creation of *games and playthings*.
+
+### P5Sound
+
+[P5Sound](https://p5js.org/reference/#/libraries/p5.sound) extends p5 with web audio functionality. Here it is used minimally for playback/looping of the soundtrack.
+
+### Hammer.js
+
+[Hammer.js](https://hammerjs.github.io/) is a tiny 7k library for adding swiping gestures to a web app for use on mobile. Dan Shiffman provided [starter code](https://editor.p5js.org/projects/HyEDRsPel) to integrate with P5JS.
 
 
 # How To Use This
