@@ -117,7 +117,7 @@ movePlayer();
 }
 
 function playSoundtrack(){
-  soundtrack.play();
+  soundtrack.loop();
 }
 
 function movePlayer(){
