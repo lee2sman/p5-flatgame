@@ -30,7 +30,7 @@ A [flatgame](https://flatgame.itch.io/) is an inclusive democratic form of game-
 3. Snap photos of it all. Cut it up in Photoshop, GIMP, etc. Or take individual snaps of each item and the player.
 4. Move player image files to the player assets folder. Note the filename scheme. Update the player animation section in ```sketch.js``` if you have more than 3 images for the player.
 5. Replace the ```background.jpg``` image in the assets folder with your own background image. Gifs and png files are okay as well, but make sure you change this in ```sketch.js```.
-6. Replace the items in the assets/items folder. Make sure you name this in sequential order. Update ```numOfItems``` in sketch.js to be equal to the number of files in here. Must be named in numerical order, ending in ```.jpg```.
+6. Replace the items in the assets/items folder. Make sure you name this in sequential order. Update ```numOfItems``` in sketch.js to be equal to the number of files in here. Must be named in numerical order, ending in ```.png```. You can use other file types like gif or jpeg but you'll see a white background to your item.
 7. Change the ```itemText``` array at the top of the sketch.js file with your own text. The order should match the order of the items in the ```assets/items``` folder.
 8. Change the soundtrack. Delete my soundtrack file. Drop in another mp3 file, change its name to ```soundtrack.mp3```.
 9. Test by running a local server. Edit. Iterate. Publish to the web!
