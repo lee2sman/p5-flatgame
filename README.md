@@ -10,7 +10,10 @@ This is a template to create a [Flatgame](https://flatgame.itch.io/) using the P
 
 A [flatgame](https://flatgame.itch.io/) is an inclusive democratic form of game-making. Participants create games with paper, markers, crayons, photos, scissors in a cut and paste zine approach. Flatgames take the approach of creating a story about one's own life, , often a game about a place you've  been or a memory. All art is made by hand, usually with a single sheet of paper. You could also use clay, collage, paint, among many other options. The art assets are photographed and imported. There are previous templates for making a FlatGame in [Unity](https://candle.itch.io/flatpack). I have made a user-friendly editable template for P5JS with P5Play.
 
+![navigating in a flatgame](animation.gif)
+
 ![screengrab of example flatgame](screengrab.png)
+
 
 ## Installed Dependencies - these come with P5-Flatgame
 
