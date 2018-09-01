@@ -28,7 +28,7 @@ var SCENE_H = 800;
 
 function preload(){
   for (var i = 1; i <= numOfItems; i++)  {   //we use <= so we can number from 1
-    itemIMG[i] = loadImage('assets/items/' + i +'.jpg');
+    itemIMG[i] = loadImage('assets/items/' + i +'.png');
   }
 }
 
@@ -46,7 +46,7 @@ function setup() {
   //create a sprite and add the 3 animations
   player = createSprite(width, height, 50, 100);
 
-  var myAnimation = player.addAnimation('moving', 'assets/player/player1.jpg', 'assets/player/player2.jpg', 'assets/player/player3.jpg');
+  var myAnimation = player.addAnimation('moving', 'assets/player/player1.png', 'assets/player/player2.png', 'assets/player/player3.png');
   myAnimation.frameDelay = 10; //slow down the animation
 
   bg = new Group();
