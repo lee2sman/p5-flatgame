@@ -96,10 +96,10 @@ movePlayer();
   //a camera is created automatically at the beginning
 
   //.5 zoom is zooming out (50% of the normal size)
-  if(mouseIsPressed)
-    camera.zoom = 0.5;
-  else
-    camera.zoom = 1;
+  // if(mouseIsPressed)
+  //   camera.zoom = 0.5;
+  // else
+  //   camera.zoom = 1;
 
   //set the camera position to the player position
   camera.position.x = player.position.x;
@@ -158,12 +158,12 @@ function movePlayer(){
 function swiped(event) {
   console.log(event);
   if (event.direction == 4) {
-    player.position.x += 25;
+    player.position.x += 250;
   } else if (event.direction == 8) {
-    player.position.y -= 25;
+    player.position.y -= 250;
   } else if (event.direction == 16) {
-    player.position.y += 25;
+    player.position.y += 250;
   } else if (event.direction == 2) {
-    player.position.x -= 25;
+    player.position.x -= 250;
   }
 }
