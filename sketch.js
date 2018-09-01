@@ -43,7 +43,7 @@ function setup() {
   //create a sprite and add the 3 animations
   player = createSprite(width, height, 50, 100);
 
-  var myAnimation = player.addAnimation('moving', 'assets/player1.jpg', 'assets/player2.jpg', 'assets/player3.jpg');
+  var myAnimation = player.addAnimation('moving', 'assets/player/player1.jpg', 'assets/player/player2.jpg', 'assets/player/player3.jpg');
   myAnimation.frameDelay = 10; //slow down the animation
 
   bg = new Group();
