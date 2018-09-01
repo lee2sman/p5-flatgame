@@ -3,7 +3,9 @@
 //
 //IMPORTANT: number items in assets/items folder starting from 0
 
-//requires p5play
+//dependencies: p5js, p5play, p5sound, hammerjs
+//hammerjs code from Daniel Shiffman
+
 
 //FILL THIS OUT WITH TEXT ON EACH ITEM IN FOLDER
 //SHOULD be same amount of phrases as items in items folder and numOfItems
@@ -42,6 +44,21 @@ function setup() {
 
   //font size
   textSize(24);
+
+  //hammerjs setup
+  // set options to prevent default behaviors for swipe, pinch, etc
+var options = {
+  preventDefault: true
+};
+// document.body registers gestures anywhere on the page
+var hammer = new Hammer(document.body, options);
+hammer.get('swipe').set({
+direction: Hammer.DIRECTION_ALL
+});
+
+hammer.on("swipe", swiped);
+
+
 
   //create a sprite and add the 3 animations
   player = createSprite(width, height, 50, 100);
@@ -136,4 +153,17 @@ function movePlayer(){
     player.position.y += 25;
   }
 
+}
+
+function swiped(event) {
+  console.log(event);
+  if (event.direction == 4) {
+    player.position.x += 25;
+  } else if (event.direction == 8) {
+    player.position.y -= 25;
+  } else if (event.direction == 16) {
+    player.position.y += 25;
+  } else if (event.direction == 2) {
+    player.position.x -= 25;
+  }
 }
