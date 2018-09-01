@@ -37,6 +37,9 @@ function setup() {
   SCENE_W = 2*windowWidth;
   SCENE_H = 2*windowHeight;
 
+  //load soundtrack, with callback
+  soundtrack = loadSound('assets/soundtrack.mp3', playSoundtrack);
+
   //font size
   textSize(24);
 
@@ -111,6 +114,10 @@ movePlayer();
 
   //character on the top
   drawSprite(player);
+}
+
+function playSoundtrack(){
+  soundtrack.play();
 }
 
 function movePlayer(){
