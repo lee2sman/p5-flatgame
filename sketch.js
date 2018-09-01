@@ -61,7 +61,7 @@ function setup() {
     bg.add(item[i]);
   }
 
-  frame = loadImage('assets/city.jpg');
+  frame = loadImage('assets/background.jpg');
 }
 
 function draw() {
