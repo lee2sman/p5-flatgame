@@ -1,14 +1,14 @@
 # P5-Flatgame
 
-**Note: I am currently editing to make this more advanced so assets can be dropped in easier. Consider this the alpha.**  
+**Note: I am currently editing to make this more advanced so assets can be dropped in easier. Consider this the pre-alpha!**
 
-This is a template using the P5JS and P5Play javascript libraries to create a Flatgame.
+This is a template to create a [Flatgame](https://flatgame.itch.io/) using the P5JS and P5Play javascript libraries under the hood.
 
 ## Glossary
 
 ### What is a FlatGame?
 
-A flatgame is an inclusive democratic form of game-making. Participants create games with paper, markers, crayons, photos, scissors in a cut and paste zine approach. Flatgames take the approach of creating a story about one's own life, , often a game about a place you've  been or a memory. All art is made by hand, usually with a single sheet of paper. You could also use clay, collage, paint, among many other options. The art assets are photographed and imported. There are previous templates for making a FlatGame in [Unity](https://candle.itch.io/flatpack). I have made a user-friendly editable template for P5JS with P5Play.
+A [flatgame](https://flatgame.itch.io/) is an inclusive democratic form of game-making. Participants create games with paper, markers, crayons, photos, scissors in a cut and paste zine approach. Flatgames take the approach of creating a story about one's own life, , often a game about a place you've  been or a memory. All art is made by hand, usually with a single sheet of paper. You could also use clay, collage, paint, among many other options. The art assets are photographed and imported. There are previous templates for making a FlatGame in [Unity](https://candle.itch.io/flatpack). I have made a user-friendly editable template for P5JS with P5Play.
 
 ## Installed Dependencies - these come with P5-Flatgame
 
@@ -48,7 +48,7 @@ This comes from the [Flatgame Annual overview](https://itch.io/jam/flatgame-annu
 
 > 4.n Release it! The idea is to aim to make the game in an hour or two, and to actually do it in half a day. Finishing games is its own skill and it's fun. <3 Remember most people's key impression of your game will be from your itch page, so add screenshots and give a nice description!!
 
-> (Bonus 0. Flat games should be inspired by or recreate real events and places. Feel free to exaggerate/reinterpret and fictionalize. Isle is Full of Noises started as a game about visiting an island for a holiday (inis spraoi!) when I drew the art, but when I put it into the game it became something entirely different and pulled from different memories. 
+> (Bonus 0. Flat games should be inspired by or recreate real events and places. Feel free to exaggerate/reinterpret and fictionalize. Isle is Full of Noises started as a game about visiting an island for a holiday (inis spraoi!) when I drew the art, but when I put it into the game it became something entirely different and pulled from different memories.
 
 > Think about how you can use the 2D canvas to represent space and time. Eg, to show time passing in one location, draw the location multiple times at different times and the playing can walk between them. Space as time. art as time. time as time!)
 
@@ -62,4 +62,3 @@ There is a [FlatGame Annual jam](https://itch.io/jam/flatgame-annual-2016). [Her
 Wonderful game-maker and tool-creator Mark Wonnacott created an [Android application](https://candle.itch.io/flatpack) to make FlatGames called Flatpack.
 
 A [tutorial](https://flatgame.itch.io/first-timers-tutorial) for making Flatgames.
-
