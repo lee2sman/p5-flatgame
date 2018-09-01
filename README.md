@@ -70,4 +70,4 @@ A [tutorial](https://flatgame.itch.io/first-timers-tutorial) for making Flatgame
 
 ##### TODO
 
-*Obvious next steps are to make this more robust so things are easier to drag and drop without having to play with variables or other code unless you want to peek under the hid. Then add publishing capability.*
+*Obvious next steps are to make this more robust so things are easier to drag and drop without having to play with variables or other code unless you want to peek under the hood. Then add publishing capability.*
