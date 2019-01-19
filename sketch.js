@@ -1,64 +1,46 @@
-//flatgame template by github/Lee2sman 2018
-//MIT License
-//
-//IMPORTANT: number items in assets/items folder starting from 0
+//flatgame template by Lee2sman 2018-2019
+//leetusman.com
+//code=MIT license. artistic work = cc 3.0
 
-//dependencies: p5js, p5play, p5sound, hammerjs
-//hammerjs code from Daniel Shiffman
-
-
-//FILL THIS OUT WITH TEXT ON EACH ITEM IN FOLDER
-//SHOULD be same amount of phrases as items in items folder and numOfItems
-var itemText = [
-  "I took the subway for an hour just to see the beach even if I didn't go in",
-  "I was nervous about all the people. It felt like a constant shoving match.",
-  "My school was a big box. Not the most inviting. But it became something like a home.",
-  "I didn't have an umbrella and no money. When it rained, I ducked under awnings.",
+let itemText = [
+  ["I didn't have an umbrella and no money. When it rained, I ducked under awnings.",0,20],
+  ["But I really started to love the rain",20,580],
+  ["I took the subway for an hour just to see the beach even if I didn't go in",1000,1300],
+  ["I was nervous about all the people. It felt like a constant shoving match.",1050,200],
+  ["The city wasn't just big, it was.......another planet.",20,1250],
+  ["Sunsets in the city were caramel swirls",2250,350],
+  ["My school was a big box. Not the most inviting. But it became something like a home.",1400,620] //no comma after last one!
 ];
 
+
+let soundtrack;
 var player;
 var numOfItems = 4; //set this number to number of items in items folder!
-var bg;
 var frame;
 var item = [];
-var itemIMG = [];
-//the scene is twice the size of the canvas
-
-//default
-var SCENE_W = 1600;
-var SCENE_H = 800;
 
 function preload(){
-  for (var i = 1; i <= numOfItems; i++)  {   //we use <= so we can number from 1
-    itemIMG[i] = loadImage('assets/items/' + i +'.png');
-  }
+    soundtrack = loadSound('assets/soundtrack.mp3');
+
+    item[0] = loadAnimation('assets/waves01.png','assets/waves02.png')
+    item[0].location = {'x':1100,'y':900};
+
+    item[1] = loadAnimation('assets/crowd01.png','assets/crowd02.png')
+    item[1].location = {'x':1800,'y':300};
+
+    item[2] = loadAnimation('assets/school01.png','assets/school02.png')
+    item[2].location = {'x':1750,'y':860};
+
+    item[3] = loadAnimation('assets/rainclouds01.png','assets/rainclouds03.png')
+    item[3].location = {'x':300,'y':250};
+
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
-  SCENE_W = 2*windowWidth;
-  SCENE_H = 2*windowHeight;
-
-  //load soundtrack, with callback
-  soundtrack = loadSound('assets/soundtrack.mp3', playSoundtrack);
+  createCanvas(1366,635); //how big is our world? (in pixels!)
 
   //font size
   textSize(24);
-
-  //hammerjs setup
-  // set options to prevent default behaviors for swipe, pinch, etc
-var options = {
-  preventDefault: true
-};
-// document.body registers gestures anywhere on the page
-var hammer = new Hammer(document.body, options);
-hammer.get('swipe').set({
-direction: Hammer.DIRECTION_ALL
-});
-
-hammer.on("swipe", swiped);
-
-
 
   //create a sprite and add the 3 animations
   player = createSprite(width, height, 50, 100);
@@ -66,40 +48,22 @@ hammer.on("swipe", swiped);
   var myAnimation = player.addAnimation('moving', 'assets/player/player1.png', 'assets/player/player2.png', 'assets/player/player3.png');
   myAnimation.frameDelay = 10; //slow down the animation
 
-  bg = new Group();
-
   //create some background for visual reference
-  for(var i=1; i<=numOfItems; i++)
-  {
-    //create a sprite and add its image
-    item[i] = createSprite(random(0,2*width), random(0,2*height));
-    //TODO: ADD ARRAY TO SAVE ITEM X, Y LOCATIONS AND SPACE OUT BETTER!
-
-    item[i].addImage(itemIMG[i]);
-    //cycles through items 0 1 2
-  //  item.addAnimation('normal', 'assets/items'+i%3+'.png'); //can always implement animation later
-    bg.add(item[i]);
-  }
-
   frame = loadImage('assets/background.jpg');
+
 }
 
 function draw() {
-  background(5, 5, 5);
+
+  background(5, 5, 5); //background color
   image(frame, 0, 0,2*width,2*height);
 
-  //mouse trailer, the speed is inversely proportional to the mouse distance
-  //player.velocity.x = (camera.mouseX-player.position.x)/20;
-  //player.velocity.y = (camera.mouseY-player.position.y)/20;
-movePlayer();
+  for(var i=0; i<numOfItems; i++){
+     animation(item[i],item[i].location.x,item[i].location.y);
+     item[i].frameDelay = 15;
+  }
 
-  //a camera is created automatically at the beginning
-
-  //.5 zoom is zooming out (50% of the normal size)
-  // if(mouseIsPressed)
-  //   camera.zoom = 0.5;
-  // else
-  //   camera.zoom = 1;
+  movePlayer();
 
   //set the camera position to the player position
   camera.position.x = player.position.x;
@@ -110,34 +74,31 @@ movePlayer();
     player.position.x = 0;
   if(player.position.y < 0)
     player.position.y = 0;
-  if(player.position.x > SCENE_W)
-    player.position.x = SCENE_W;
-  if(player.position.y > SCENE_H)
-    player.position.y = SCENE_H;
-
-  //draw the scene
-  //items first
-  drawSprites(bg);
+  if(player.position.x > 2*width)
+    player.position.x = 2*width;
+  if(player.position.y > 2*height)
+    player.position.y = 2*height;
 
   //text for items
-  for (var i = 0; i < numOfItems; i++){
-    stroke(255);
-    fill(255);
-    strokeWeight(1);
-    text(itemText[i],item[i+1].position.x + item[i+1].width + 50, item[i+1].position.y, 300, 300)
+  for (var i = 0; i < itemText.length; i++){
+    strokeWeight(2);
+    stroke(0);
+    fill(30,60,200); //color of text
+    //show all of the text
+    text(itemText[i][0],itemText[i][1],itemText[i][2]);
     fill(0);
   }
-
 
   //character on the top
   drawSprite(player);
 }
 
-function playSoundtrack(){
-  soundtrack.loop();
-}
-
 function movePlayer(){
+  if (keyIsPressed){
+    if (!soundtrack.isPlaying()){
+      soundtrack.loop();
+    }
+  }
  if (keyIsDown(LEFT_ARROW)) {
     player.position.x -= 25;
   }
@@ -148,22 +109,7 @@ function movePlayer(){
   if (keyIsDown(UP_ARROW)) {
     player.position.y -= 25;
   }
-
   if (keyIsDown(DOWN_ARROW)) {
     player.position.y += 25;
-  }
-
-}
-
-function swiped(event) {
-  console.log(event);
-  if (event.direction == 4) {
-    player.position.x += 250;
-  } else if (event.direction == 8) {
-    player.position.y -= 250;
-  } else if (event.direction == 16) {
-    player.position.y += 250;
-  } else if (event.direction == 2) {
-    player.position.x -= 250;
   }
 }
