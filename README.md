@@ -29,22 +29,17 @@ A [flatgame](https://flatgame.itch.io/) is an inclusive democratic form of game-
 
 [P5Sound](https://p5js.org/reference/#/libraries/p5.sound) extends p5 with web audio functionality. Here it is used minimally for playback/looping of the soundtrack.
 
-### Hammer.js
-
-[Hammer.js](https://hammerjs.github.io/) is a tiny 7k library for adding swiping gestures to a web app for use on mobile. Dan Shiffman provided [starter code](https://editor.p5js.org/projects/HyEDRsPel) to integrate with P5JS.
-
-
 # How To Use This
 
 1. Get a piece of paper, markers, crayons, scissors, glue, tape, etc.
 2. Make a flatgame. Draw. Write. Create a game about a place or memory. Tell a story. Use any materials.
 3. Snap photos of it all. Cut it up in Photoshop, GIMP, etc. Or take individual snaps of each item and the player.
-4. Move player image files to the player assets folder. Note the filename scheme. Update the player animation section in ```sketch.js``` if you have more than 3 images for the player.
+4. Move player image files to the player assets folder. Note the filename scheme. Update the player animation section in ```sketch.js```.
 5. Replace the ```background.jpg``` image in the assets folder with your own background image. Gifs and png files are okay as well, but make sure you change this in ```sketch.js```.
-6. Replace the items in the assets/items folder. Make sure you name this in sequential order. Update ```numOfItems``` in sketch.js to be equal to the number of files in here. Must be named in numerical order, ending in ```.png```. You can use other file types like gif or jpeg but you'll see a white background to your item.
-7. Change the ```itemText``` array at the top of the sketch.js file with your own text. The order should match the order of the items in the ```assets/items``` folder.
+6. Replace the images for animation in the assets folder. Make sure you name this in sequential order. Update ```numOfItems``` in sketch.js to be equal to the number of files in here. Must be named in numerical order, ending in ```.png```. You can use other file types like gif or jpeg but you'll see a white background to your item.
+7. Update the text with your own text in the top of the sketch file.
 8. Change the soundtrack. Delete my soundtrack file. Drop in another mp3 file, change its name to ```soundtrack.mp3```.
-9. Test by running a local server. Edit. Iterate. Publish to the web!
+9. Test. Iterate. Publish! Play! Promote!
 
 ### Flatgames rules
 
@@ -67,7 +62,3 @@ There is a [FlatGame Annual jam](https://itch.io/jam/flatgame-annual-2016). [Her
 Wonderful game-maker and tool-creator Mark Wonnacott created an [Android application](https://candle.itch.io/flatpack) to make FlatGames called Flatpack.
 
 A [tutorial](https://flatgame.itch.io/first-timers-tutorial) for making Flatgames.
-
-##### TODO
-
-*Obvious next steps are to make this more robust so things are easier to drag and drop without having to play with variables or other code unless you want to peek under the hood. Then add publishing capability.*
