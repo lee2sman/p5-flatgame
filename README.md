@@ -1,7 +1,5 @@
 # P5-Flatgame
 
-**Note: I am currently editing to make this more advanced so assets can be dropped in easier. Consider this the pre-alpha!**
-
 This is a template to create a [Flatgame](https://flatgame.itch.io/) using the P5JS and P5Play javascript libraries under the hood. Also includes P5Sound to play the soundtrack, and hammer.js for swipe gesture on mobile.
 
 ## Glossary
